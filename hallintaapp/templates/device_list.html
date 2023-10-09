@@ -1,0 +1,25 @@
+<!-- templates/device_list.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Lisää ennen <h1> otsikkoa -->
+<form method="get">
+    <input type="text" name="q" placeholder="Hae laitetta...">
+    <input type="submit" value="Hae">
+</form>
+    <h1>Laitteet ja palvelut</h1>
+    <ul>
+    {% for device in devices %}
+        <li>
+            <strong>{{ device.name }}</strong> ({{ device.model }})
+            <br>
+            IP: {{ device.ip_address }}
+            <br>
+           <!-- <a href="{{ device.admin_link }}" target="_blank">Hallintapaneeli</a> -->
+           <!-- Muutettu linkki ohjaamaan redirect_to_device-näkymään -->
+            <a href="{% url 'redirect_to_device' device.pk %}" target="_blank">Hallintapaneeli</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+

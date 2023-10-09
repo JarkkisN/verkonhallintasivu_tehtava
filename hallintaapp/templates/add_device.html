@@ -1,0 +1,11 @@
+<!-- templates/add_device.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Lisää laite</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Lisää</button>
+    </form>
+{% endblock %}
