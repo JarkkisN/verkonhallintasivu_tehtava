@@ -15,7 +15,7 @@ Tämä on ohje Django-projektin ympäristön käyttöönottoon.
 1. **Kloonaa repositorio**
 
    ```bash
-   git clone git@github.com:username/repository.git
+   git clone https://github.com/JarkkisN/verkonhallintasivu_tehtava
    cd repository
    ```
 
