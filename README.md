@@ -1,4 +1,4 @@
-# Django Projektin Käyttöönotto
+# Django-projektin käyttöönotto
 
 Tämä on ohje Django-projektin ympäristön käyttöönottoon.
 
