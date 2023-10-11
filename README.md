@@ -1,5 +1,3 @@
-# joo ei oo iha oikei mut jotenki tällee:
-
 # Django Projektin Käyttöönotto
 
 Tämä on ohje Django-projektin ympäristön käyttöönottoon.
@@ -22,7 +20,7 @@ Tämä on ohje Django-projektin ympäristön käyttöönottoon.
 2. **Luo virtuaaliympäristö (suositeltavaa)**
 
    ```bash
-   python3 -m venv venv
+   python -m venv venv
    ```
 
    Aktivoi virtuaaliympäristö:
@@ -74,5 +72,3 @@ Tämä on ohje Django-projektin ympäristön käyttöönottoon.
 Lisätietoja Django-projektin konfiguroinnista ja käytöstä löydät [Djangon virallisesta dokumentaatiosta](https://docs.djangoproject.com/).
 
 ---
-
-Voit lisätä tai muokata yllä olevaa `README.md` -tiedostoa tarpeidesi mukaan. Tämä on perusohje, joka kattaa yleisimmät askeleet Django-projektin käyttöönotossa.
