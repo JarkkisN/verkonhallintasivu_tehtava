@@ -1,25 +1,40 @@
-<!-- templates/device_list.html -->
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Lisää ennen <h1> otsikkoa -->
-<form method="get">
-    <input type="text" name="q" placeholder="Hae laitetta...">
-    <input type="submit" value="Hae">
-</form>
-    <h1>Laitteet ja palvelut</h1>
-    <ul>
-    {% for device in devices %}
-        <li>
-            <strong>{{ device.name }}</strong> ({{ device.model }})
-            <br>
-            IP: {{ device.ip_address }}
-            <br>
-           <!-- <a href="{{ device.admin_link }}" target="_blank">Hallintapaneeli</a> -->
-           <!-- Muutettu linkki ohjaamaan redirect_to_device-näkymään -->
-            <a href="{% url 'redirect_to_device' device.pk %}" target="_blank">Hallintapaneeli</a>
-        </li>
-    {% endfor %}
-    </ul>
-{% endblock %}
+<!-- Lisää Bootstrapin CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Lisää ennen <h1> otsikkoa -->
+            <form method="get" class="mb-3">
+                <div class="input-group">
+                    <input type="text" name="q" placeholder="Hae laitetta..." class="form-control">
+                    <div class="input-group-append">
+                        <input type="submit" value="Hae" class="btn btn-dark">
+                    </div>
+                </div>
+            </form>
+            <h1 class="text-light">Laitteet ja palvelut</h1>
+            <ul class="list-group">
+            {% for device in devices %}
+                <li class="list-group-item bg-dark text-light">
+                    <strong>{{ device.name }}</strong> ({{ device.model }}) - {{ device.type }}
+                    <br>
+                    IP: {{ device.ip_address }}
+                    <br>
+                    <!-- Muutettu linkki ohjaamaan redirect_to_device-näkymään -->
+                    <a href="{% url 'redirect_to_device' device.pk %}" target="_blank" class="btn btn-secondary btn-sm mt-2">Hallintapaneeli</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Lisää Bootstrapin JS ja Popper.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

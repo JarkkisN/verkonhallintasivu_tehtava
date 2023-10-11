@@ -1,11 +1,16 @@
-<!-- templates/add_device.html -->
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Lisää laite</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Lisää</button>
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-light mb-4">Lisää laite</h1>
+            <form method="post" class="bg-dark p-4 rounded">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-secondary">Lisää</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

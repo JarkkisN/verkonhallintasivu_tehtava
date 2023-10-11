@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labran hallintasivusto</title>
+    <!-- Bootstrapin CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Voit lisätä tähän muita metatietoja, tyylitiedostoja, skriptejä jne. -->
 </head>
-<body>
-<nav>
-    <a href="{% url 'add_device' %}">Lisää laite</a>
-    <!-- ... muut navigointilinkit ... -->
-</nav>
-    <header>
-        <h1>Labran hallintasivusto</h1>
-        <!-- Voit lisätä tähän navigointipalkin, jos tarvitset -->
-    </header>
 
-    <main>
+<body class="bg-dark text-light">
+    <!-- Navigointipalkki -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <a class="navbar-brand" href="#">Labran hallintasivusto</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add_device' %}">Lisää laite</a>
+                </li>
+                <!-- ... muut navigointilinkit ... -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sisältöalue -->
+    <main class="container mt-5">
         {% block content %}
         <!-- Sisältöalue, jonka muut mallipohjat voivat täyttää -->
         {% endblock %}
     </main>
 
-    <footer>
-        <p>&copy; 2023 Labran hallintasivusto. Kaikki oikeudet pidätetään.</p>
+    <!-- Alatunniste -->
+    <footer class="mt-5">
+        <div class="container text-center">
+            <p>&copy; 2023 Labran hallintasivusto. Kaikki oikeudet pidätetään.</p>
+        </div>
     </footer>
+
+    <!-- Bootstrapin JS ja Popper.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
