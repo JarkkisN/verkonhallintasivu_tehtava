@@ -1,17 +1,23 @@
-# views.py
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Device
 from .forms import DeviceForm
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q  # Lisätty Q-objektin tuonti
 
-# views.py (päivitetty)
 def device_list(request):
     query = request.GET.get('q')
     if query:
-        devices = Device.objects.filter(name__icontains=query)
+        devices = Device.objects.filter(
+            Q(name__icontains=query) |
+            Q(model__icontains=query) |
+            Q(type__icontains=query) |
+            Q(ip_address__icontains=query)
+        )
     else:
         devices = Device.objects.all()
-    return render(request, 'device_list.html', {'devices': devices})
+
+    device_types = ["ROUTER", "SWITCH", "NAS", "ePDU", "PROXMOX"]
+    return render(request, 'device_list.html', {'devices': devices, 'device_types': device_types})
 
 @login_required
 def add_device(request):
