@@ -4,8 +4,6 @@
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
 media
 
 # Virtualenv
@@ -13,20 +11,6 @@ media
 *.pyo
 *.egg-info/
 *.log
-*.sqlite3
-*.tar.gz
-local_settings.py
-db.bin
-*.bak
-*.swp
-*~
-*.db
-*.sqlite3
-*.sqlite3-journal
-*.py[co]
-*.pot
-*.log
-*.egg-info/
 *.tar.gz
 local_settings.py
 db.bin
