@@ -49,7 +49,7 @@ Tämä on ohje Django-projektin ympäristön käyttöönottoon.
    python manage.py runserver
    ```
 
-7. **Avaa selain** ja mene osoitteeseen http://127.0.0.1:8000/ nähdäksesi sovelluksen toiminnassa.
+7. **Avaa selain** ja mene osoitteeseen http://127.0.0.1 nähdäksesi sovelluksen toiminnassa.
 
 8. **(Valinnainen) Luo admin-käyttäjä**
 
@@ -57,7 +57,7 @@ Tämä on ohje Django-projektin ympäristön käyttöönottoon.
    ```bash
    python manage.py createsuperuser
    ```
-   Tämän jälkeen voit kirjautua sisään admin-paneeliin osoitteessa http://127.0.0.1:8000/admin/.
+   Tämän jälkeen voit kirjautua sisään admin-paneeliin osoitteessa http://127.0.0.1/admin/.
 
 ### Docker Compose -asennus
 
@@ -72,7 +72,7 @@ Tämä on ohje Django-projektin ympäristön käyttöönottoon.
    docker-compose up --build
    ```
 
-3. **Avaa selain** ja mene osoitteeseen http://127.0.0.1:8000/ nähdäksesi sovelluksen toiminnassa.
+3. **Avaa selain** ja mene osoitteeseen http://127.0.0.1/ nähdäksesi sovelluksen toiminnassa.
 
 ## Lisätietoja
 Lisätietoja Django-projektin konfiguroinnista ja käytöstä löydät Djangon virallisesta dokumentaatiosta.
