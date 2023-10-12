@@ -118,7 +118,7 @@ Frontend koostuu HTML-templaatteista, jotka on tyylitelty Bootstrapilla. Templaa
 
 ## Toiminnot ja ratkaisut 
 
-Käyttäjäroolit: Järjestelmässä on kaksi pääkäyttäjäroolia: admin ja käyttäjä. Adminilla on oikeudet lisätä, muokata ja poistaa laitteita, kun taas käyttäjällä on oikeudet vain katsella laitteita. Käyttäjältä ei vaadita kirjautumista. 
+Käyttäjäroolit: Järjestelmässä on kaksi pääkäyttäjäroolia: admin ja käyttäjä. Adminilla on oikeudet lisätä, muokata ja poistaa laitteita, kun taas käyttäjällä on oikeudet vain katsella laitteita. Käyttäjältä ei vaadita kirjautumista. Laitteita voi lisätä pääsivun kautta "lisää laite" kohdasta jos on kirjautunut admin käyttäjällä, mutta laitteet lisääminen onnistuu myös admin-paneelin kautta.
 
 Sivulla on myös hakutoiminto. Käyttäjät voivat etsiä laitteita nimen, tai niiden tietojen perusteella. Hakutoiminto perustuu Djangon ORM:ään ja se palauttaa laitteet, jotka vastaavat hakuehtoja.
 
