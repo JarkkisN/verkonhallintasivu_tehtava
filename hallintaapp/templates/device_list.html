@@ -17,9 +17,13 @@
                 </div>
             </form>
             <h1 class="text-light">Laitteet ja palvelut</h1>
-
+		  <div class="col-md-12">
+		  {% for type in device_types %}
+		  <a href="#{{ type }}" class="mx-2">{{ type }}</a>
+		  {% endfor %}
+		  </div>
              {% for type in device_types %}
-                <h2 class="text-light mt-4">{{ type }}</h2>
+                <h2 class="text-light mt-4" id="{{ type }}">{{ type }}</h2>
                 <div class="row">
                     {% for device in devices %}
                         {% if device.type == type %}
@@ -33,7 +37,9 @@
                                             IP: {{ device.ip_address }}<br>
                                         </p>
                                         <!-- Muutettu linkki ohjaamaan redirect_to_device-näkymään -->
+					{% if device.admin_link %}
                                         <a href="{% url 'redirect_to_device' device.pk %}" target="_blank" class="btn btn-secondary">Hallintapaneeli</a>
+					{% endif %}
                                     </div>
                                 </div>
                             </div>
