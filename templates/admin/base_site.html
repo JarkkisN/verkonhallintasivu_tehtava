@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ title }} | {% trans "Django site admin" %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{% trans 'Django administration' %}</a></h1>
+<!-- Lisätty selkeämpi linkki API:n etusivulle -->
+<a href="{% url 'device_list' %}" style="text-decoration: none; color: #ffc107; font-weight: bold; font-size: 1.2em; margin-left: 20px;">Takaisin Labran hallintasivustolle</a>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

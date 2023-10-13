@@ -56,7 +56,9 @@ ROOT_URLCONF = 'hallintasivu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+	# Määrittää sijainnin, josta Django etsii projektin HTML-templaattitiedostoja
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+	# Kertoo Djangolle etsiä templaattitiedostoja jokaisen asennetun sovelluksen 'templates'-hakemistosta
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

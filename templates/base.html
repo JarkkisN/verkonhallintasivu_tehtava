@@ -3,42 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Asettaa sivun skaalautuvuuden mobiililaitteilla -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labran hallintasivusto</title>
     <!-- Bootstrapin CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Voit lisätä tähän muita metatietoja, tyylitiedostoja, skriptejä jne. -->
 </head>
 
 <body class="bg-dark text-light">
     <!-- Navigointipalkki -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <a class="navbar-brand" href="{% url 'device_list' %}">Labran hallintasivusto</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-		{% if user.is_authenticated %}
-		   <a class="nav-link" href="{% url 'add_device' %}">Lisää laite</a>
-		{% else %}
-		  <a class="nav-link" href="/admin">Lisää laite</a>
-		{% endif %}
-                </li>
-                <!-- ... muut navigointilinkit ... -->
-            </ul>
-        </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary justify-content-center">
+    <!-- Linkki etusivulle -->
+    <a class="navbar-brand mx-auto" href="{% url 'device_list' %}">Labran hallintasivusto</a>
+    <!-- Navigointipalkin kollapsaus-painike mobiililaitteille -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navigointilinkit -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto w-auto">
+            <li class="nav-item">
+            <!-- Tarkistaa, onko käyttäjä kirjautunut sisään -->
+            {% if user.is_authenticated %}
+               <!-- Linkki laitteen lisäys -sivulle -->
+               <a class="nav-link" href="{% url 'add_device' %}">Lisää laite</a>
+            {% else %}
+              <!-- Linkki admin-paneeliin, jos käyttäjä ei ole kirjautunut -->
+              <a class="nav-link" href="/admin">Lisää laite</a>
+            {% endif %}
+            </li>
+            <!-- Linkki admin-sivulle -->
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/">Admin-paneeli</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
     <!-- Sisältöalue -->
     <main class="container mt-5">
+	<!-- Alue, johon muut templaatit voivat lisätä sisältöä -->
         {% block content %}
         <!-- Sisältöalue, jonka muut mallipohjat voivat täyttää -->
         {% endblock %}
     </main>
 
-    <!-- Alatunniste -->
+    <!-- Alatunniste footer -->
     <footer class="mt-5">
         <div class="container text-center">
             <p>&copy; 2023 Labran hallintasivusto. Pilvi-A. Kaikki oikeudet pidätetään.</p>

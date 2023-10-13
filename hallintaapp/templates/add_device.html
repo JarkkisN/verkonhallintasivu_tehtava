@@ -5,9 +5,10 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h1 class="text-light mb-4">Lisää laite</h1>
+	    <!-- Lomake laitteen lisäämiseen -->
             <form method="post" class="bg-dark p-4 rounded">
-                {% csrf_token %}
-                {{ form.as_p }}
+                {% csrf_token %} <!-- CSRF-token turvallisuutta varten -->
+                {{ form.as_p }} <!-- Renderöi lomakekentät automaattisesti <p>-elementteihin -->
                 <button type="submit" class="btn btn-secondary">Lisää</button>
             </form>
         </div>

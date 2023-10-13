@@ -1,7 +1,12 @@
+# Docker Compose -konfiguraation versio
 version: '3.8'
 
+# Määritellään palvelut
 services:
+  # Palvelun nimi
   web:
+    # Määritellään porttien uudelleenohjaus: isäntäkoneen portti 80 ohjataan kontin porttiin 8000
     ports:
       - '80:8000'
+    # Määritellään, mistä Dockerfile löytyy. Tässä tapauksessa nykyisestä hakemistosta (.)
     build: .

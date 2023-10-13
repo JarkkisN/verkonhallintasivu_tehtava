@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('hallintaapp.urls')),
+    path('admin/', admin.site.urls), # Reitti Django admin-paneeliin
+    path('', include('hallintaapp.urls')), # Sisällytetään 'hallintaapp'-sovelluksen URL-määrittelyt pääprojektiin
 ]

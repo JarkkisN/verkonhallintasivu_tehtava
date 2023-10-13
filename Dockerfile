@@ -12,6 +12,7 @@ RUN pip install --upgrade pip \
 # Kopioi sovelluksen koodi konttiin
 COPY . .
 
+# Käynnistää Django-kehityspalvelimen määritetyssä osoitteessa ja portissa, kun Docker-kontti käynnistetään
 CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
 
 # Ilmoita Dockerille, että sovellus kuuntelee porttia 8000
